@@ -22,7 +22,7 @@ USE `moviesdb` ;
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 07 juin 2022 à 09:14
+-- Généré le : mar. 07 juin 2022 à 11:08
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.4
 
@@ -50,7 +50,7 @@ CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `category_name` varchar(45) NOT NULL,
   `create_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `last_update` timestamp(6) NOT NULL DEFAULT current_timestamp(6)
+  `last_update` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -76,7 +76,7 @@ CREATE TABLE `customers` (
   `last_name` varchar(45) NOT NULL,
   `email` varchar(45) NOT NULL,
   `create_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `last_update` timestamp(6) NOT NULL DEFAULT current_timestamp(6)
+  `last_update`TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -100,10 +100,10 @@ CREATE TABLE `films` (
   `id` int(11) NOT NULL,
   `title` varchar(45) NOT NULL,
   `out_date` varchar(45) NOT NULL,
-  `duration` datetime NOT NULL,
+  `duration` varchar(45) DEFAULT NULL,
   `realisator` varchar(45) NOT NULL,
   `create_date` datetime NOT NULL DEFAULT current_timestamp(),
-  `last_update` timestamp(6) NOT NULL DEFAULT current_timestamp(6),
+  `last_update`TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -289,6 +289,13 @@ USE `phpmyadmin`;
 --
 -- Métadonnées pour la table films
 --
+
+--
+-- Déchargement des données de la table `pma__table_uiprefs`
+--
+
+INSERT INTO `pma__table_uiprefs` (`username`, `db_name`, `table_name`, `prefs`, `last_update`) VALUES
+('root', 'moviesdb', 'films', '{\"sorted_col\":\"`films`.`duration` ASC\"}', '2022-06-07 08:59:28');
 
 --
 -- Métadonnées pour la table payment
