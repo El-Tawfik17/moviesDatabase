@@ -8,7 +8,7 @@ UPDATE moviesdb.films SET=nom_de_la_column_concerne='valeur_de_modification' WHE
 
 <!-- Requête de suppression d'un films -->
 
-DROP moviesdb.films 'le_nom_du_film'@'localhost'
+delete from moviesdb.films where title='le_nom_du_film'
 
 <!-- Requête d' ajoute d'un client  -->
 INSERT INTO moviesdb.customers(first_name,last_name,email) values('prenom_du_client','nom_de_famille_client','email_client')
@@ -17,7 +17,7 @@ INSERT INTO moviesdb.customers(first_name,last_name,email) values('prenom_du_cli
 UPDATE moviesdb.customers SET=nom_de_la_column_concerne='valeur_de_modification' WHERE id=id_de_la_column_concerne
 
 <!-- Requête pour supprimer un client -->
-DROP moviesdb.customers 'nom_client'@'localhost'
+delete from moviesdb.customers where first_name= 'prenom_client' and last_name='nom_client'
 
 <!-- Requête pour afficher les 3 derniers films ajoutés -->
 
